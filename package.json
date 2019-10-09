@@ -1,0 +1,76 @@
+{
+	"name": "vscode-markdown-it-container",
+	"displayName": "VSCode Markdown Containers",
+	"description": "Adds markdown-it-container to VS Code's built-in markdown preview.",
+	"keywords": [
+		"markdown-it",
+		"markdown",
+		"container",
+		"classes",
+		"customization"
+	],
+	"author": "David Onofer <david.onofer@gmail.com>",
+	"license": "MIT",
+	"publisher": "frisslevegoesnapfeny",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.38.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:vscode-markdown-it-container.init"
+	],
+	"main": "./out/extension.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/welsen/vscode-markdown-it-container.git"
+	},
+	"bugs": {
+		"url": "https://github.com/welsen/vscode-markdown-it-container/issues"
+	},
+	"homepage": "https://github.com/welsen/vscode-markdown-it-container#readme",
+	"contributes": {
+		"markdown.markdownItPlugins": true,
+		"markdown.previewStyles": [
+			"./styles/vscode-markdown-it-container.css"
+		],
+		"configuration": [
+			{
+				"title": "VSCode Markdown Containers",
+				"properties": {
+					"vscode-markdown-it-container.containers": {
+						"type": "array",
+						"default": [
+							"center",
+							"pagebreak"
+						]
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/markdown-it-container": "^2.0.2",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.38.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.2.0"
+	},
+	"dependencies": {
+		"markdown-it-container": "^2.0.0"
+	}
+}
